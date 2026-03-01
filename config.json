@@ -1,0 +1,38 @@
+{
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "iteration_count": 2500,
+  "output_path": "result.png",
+  "threads": 1,
+  "seed": 2.1324512,
+  "functions": [
+    {
+      "name": "swirl",
+      "weight": 1.0
+    },
+    {
+      "name": "sinusoidal",
+      "weight": 0.7
+    }
+  ],
+  "affine_params": [
+    {
+      "a": 1.0,
+      "b": 1.0,
+      "c": 1.0,
+      "d": 1.0,
+      "e": 1.0,
+      "f": 1.0
+    },
+    {
+      "a": 0.3,
+      "b": 1.0,
+      "c": -0.2,
+      "d": 0.4,
+      "e": 1.0,
+      "f": 1.0
+    }
+  ]
+}
