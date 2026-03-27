@@ -51,6 +51,11 @@ def main() -> int:
             seed=int(cfg["seed"]),
         )
         generator.set_threads(cfg["threads"])
+
+        gamma_correction = cfg.get("gamma_correction", False)
+        gamma_value = cfg.get("gamma", 2.2)
+        generator.set_gamma_correction(gamma_correction, gamma_value)
+
         logger.info("Генератор инициализирован.")
 
         generator.generate(

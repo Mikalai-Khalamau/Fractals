@@ -6,6 +6,9 @@ DEFAULT_OUTPUT_PATH = "result.png"
 DEFAULT_THREADS = 1
 DEFAULT_FUNCTIONS = {"linear": 1.0}
 
+DEFAULT_GAMMA_CORRECTION = False
+DEFAULT_GAMMA = 2.2
+
 DEFAULT_AFFINE_PARAMS = [
     {
         "a": 0.5,
@@ -45,4 +48,6 @@ DEFAULT_CONFIG = {
     "threads": DEFAULT_THREADS,
     "functions": DEFAULT_FUNCTIONS.copy(),
     "affine_params": [param.copy() for param in DEFAULT_AFFINE_PARAMS],
+    "gamma_correction": DEFAULT_GAMMA_CORRECTION,
+    "gamma": DEFAULT_GAMMA,
 }

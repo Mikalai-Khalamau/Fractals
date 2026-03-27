@@ -36,6 +36,19 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--config", "-c", type=str, help="Путь до файла конфигурации")
 
+    parser.add_argument(
+        "-g", "--gamma-correction",
+        action="store_true",
+        default=None,
+        help="Включить гамма-коррекцию яркости итогового изображения"
+    )
+    parser.add_argument(
+        "--gamma",
+        type=float,
+        default=None,
+        help="Значение гаммы для коррекции (по умолчанию 2.2)"
+    )
+
     return parser.parse_args()
 
 
@@ -168,6 +181,11 @@ def _apply_cli_simple_params(cfg: dict, cli_args: argparse.Namespace) -> None:
         cfg["threads"] = cli_args.threads
     if cli_args.seed is not None:
         cfg["seed"] = float(cli_args.seed)
+
+    if cli_args.gamma_correction is not None:
+        cfg["gamma_correction"] = cli_args.gamma_correction
+    if cli_args.gamma is not None:
+        cfg["gamma"] = cli_args.gamma
 
 
 def _apply_cli_functions(cfg: dict, functions_str: str) -> None:

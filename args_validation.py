@@ -73,3 +73,13 @@ def validate_config(config: dict) -> None:
     _validate_functions(functions)
     affine_params = config.get("affine_params")
     _validate_affine_params(affine_params)
+
+    if config.get("gamma_correction", False):
+        gamma = config.get("gamma", 2.2)
+        _validate_gamma(gamma)
+
+def _validate_gamma(gamma: float) -> None:
+    """Проверка значения гаммы."""
+    if gamma <= 0:
+        message = "Значение гаммы должно быть положительным числом"
+        raise ValueError(message)
